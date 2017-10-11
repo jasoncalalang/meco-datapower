@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<nouns>
+	<noun name='TransformerLevelEvents'><queue>Q1</queue></noun>
+	<noun name='test2'><queue>Q2</queue></noun>
+</nouns>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<m:CreatedTransformerLevelEvents xmlns:m="http://schneider-electric-dms.com/OMS/soa/schemas/CreatedTransformerLevelEvents/v3.5#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schneider-electric-dms.com/OMS/soa/schemas/CreatedTransformerLevelEvents/v3.5# file:///C:/Users/nenad.knezev/Desktop/TLE_Meralco/CreatedTransformerLevelEvents.xsd" xmlns:N1="http://schneider-electric-dms.com/DMS/soa/schemas/StandardHeader/v1#" xmlns:N2="http://schneider-electric-dms.com/OMS/soa/schemas/TransformerLevelEvents/v3.5#">
+ <m:MessageHeader>
+  <N1:Verb>created</N1:Verb>
+  <N1:Noun>TransformerLevelEvents</N1:Noun>
+  <N1:MessageID>6458501d-v76r-7c62-p6d4-5380d804t57a</N1:MessageID>
+  <N1:Timestamp>2017-07-08T19:04:51Z</N1:Timestamp>
+ </m:MessageHeader>
+ <m:Payload>
+  <m:TransformerLevelEvents>
+   <N2:PowerTransformer>
+    <N2:mRID>ZT000126B51</N2:mRID>
+    <N2:PSREvents>
+     <N2:mRID>9</N2:mRID>
+     <N2:createdDateTime>2017-07-08T19:04:45Z</N2:createdDateTime>
+     <N2:status>
+      <N2:dateTime>2017-07-08T19:01:08Z</N2:dateTime>
+      <N2:value>0</N2:value>
+     </N2:status>
+    </N2:PSREvents>
+   </N2:PowerTransformer>
+  </m:TransformerLevelEvents>
+ </m:Payload>
+</m:CreatedTransformerLevelEvents>
