@@ -1,4 +1,6 @@
-<names>
-<name key="/abc/def">123456</name>
-<name key="/q12/2we">438374</name>
-</names>
+<?xml version="1.0" encoding="UTF-8"?>
+
+<paths>
+  <path key="/abc/def">/123/456</path>
+  <path key="/q12/2we">/438/874</path>
+</paths>
