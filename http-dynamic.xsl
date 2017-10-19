@@ -29,35 +29,35 @@
       <!-- if there is a query parameter -->
       <xsl:when test="string-length($path-before) != 0">
         <dp:set-local-variable name="'lookup-value'" value="document('http-lookup.xml')/paths/path[@key=$path-before]"/>
-        <dp:set-variable name="'var://service/routing-url'" value="concat('http://localhost:9080', concat(dp:local-variable('lookup-value'), $query-string))"/>
+        <dp:set-variable name="'var://service/routing-url'" value="concat($http-config, concat(dp:local-variable('lookup-value'), $query-string))"/>
       </xsl:when>
 
       <!-- if there is no query parameter -->
       <xsl:otherwise>
         <dp:set-local-variable name="'lookup-value'" value="document('http-lookup.xml')/paths/path[@key=$path]"/>
-        <dp:set-variable name="'var://service/routing-url'" value="concat('http://localhost:9080', dp:local-variable('lookup-value'))"/>
+        <dp:set-variable name="'var://service/routing-url'" value="concat($http-config, dp:local-variable('lookup-value'))"/>
       </xsl:otherwise>
     </xsl:choose>
 
     <xsl:variable name="query-string" select="concat('?', substring-after($uri, '?'))"/>
 
-    <xsl:message dp:priority="error">
+    <xsl:message dp:priority="debug">
       <xsl:value-of select="dp:variable('var://service/routing-url')"/>
     </xsl:message>
 
-    <xsl:message dp:priority="error">
+    <xsl:message dp:priority="debug">
       <xsl:value-of select="concat('lookup-value = ', dp:local-variable('lookup-value'))"/>
     </xsl:message>
 
-    <xsl:message dp:priority="error">
+    <xsl:message dp:priority="debug">
       <xsl:value-of select="concat('path = ', $path)"/>
     </xsl:message>
 
-    <xsl:message dp:priority="error">
+    <xsl:message dp:priority="debug">
       <xsl:value-of select="concat('path-before = ', $path-before)"/>
     </xsl:message>
 
-    <xsl:message dp:priority="error">
+    <xsl:message dp:priority="debug">
       <xsl:value-of select="concat('query-string = ', $query-string)"/>
     </xsl:message>
 
