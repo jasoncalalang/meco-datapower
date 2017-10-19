@@ -29,8 +29,9 @@ ___
 ---
 ### Instructions for http-dynamic.xsl
 1. Clone the repository.
-2. Edit `http-dynamic.xsl`, and change the parameters according to the IP address and port of the destination server.
-3. Upload `http-dynamic.xsl` and `http-lookup.xml` to DataPower. They should be residing on the same directory.
+2. Edit `http-endpoint.xml`, and change the parameters according to the IP address and port of the destination server.
+3. Edit `http-lookup.xml`, and change the parameters according to the endpoint URLs required by MERALCO.
+4. Upload `http-dynamic.xsl`, `http-endpoint.xml` and `http-lookup.xml` to DataPower. They should be residing on the same directory.
 
 ---
 ### Example of http-lookup.xml
