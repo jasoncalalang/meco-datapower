@@ -27,28 +27,17 @@
       <!-- if there is a query parameter -->
       <xsl:when test="string-length($path-before) != 0">
         <dp:set-local-variable name="'lookup-value'" value="document('http-lookup.xml')/paths/path[@key=$path-before]"/>
-      </xsl:when>
-
-      <!-- if there is no query parameter -->
-      <xsl:otherwise>
-        <dp:set-local-variable name="'lookup-value'" value="document('http-lookup.xml')/paths/path[@key=$path]"/>
-      </xsl:otherwise>
-    </xsl:choose>
-
-    <xsl:variable name="query-string" select="concat('?', substring-after($uri, '?'))"/>
-
-    <xsl:choose>
-      <!-- if there is a query parameter -->
-
-      <xsl:when test="substring-after($uri, '?')">
         <dp:set-variable name="'var://service/routing-url'" value="concat('http://localhost:9080', concat(dp:local-variable('lookup-value'), $query-string))"/>
       </xsl:when>
 
       <!-- if there is no query parameter -->
       <xsl:otherwise>
+        <dp:set-local-variable name="'lookup-value'" value="document('http-lookup.xml')/paths/path[@key=$path]"/>
         <dp:set-variable name="'var://service/routing-url'" value="concat('http://localhost:9080', dp:local-variable('lookup-value'))"/>
       </xsl:otherwise>
     </xsl:choose>
+
+    <xsl:variable name="query-string" select="concat('?', substring-after($uri, '?'))"/>
 
     <xsl:message dp:priority="error">
       <xsl:value-of select="dp:variable('var://service/routing-url')"/>
