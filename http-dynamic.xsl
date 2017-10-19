@@ -22,6 +22,8 @@
 
     <xsl:variable name="path-before" select="substring-before($path, '?')"/>
 
+    <xsl:variable name="http-config" select="document('http-endpoint.xml')/endpoint" />
+
     <xsl:choose>
 
       <!-- if there is a query parameter -->
