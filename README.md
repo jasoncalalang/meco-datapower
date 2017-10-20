@@ -38,8 +38,19 @@ ___
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
+
 <paths>
-  <path key="/example/from/path">/destination/to/path</path>
-  <path key="/sample/from">/destination/to</path>
+  <path key="/Customer/OnlineServiceApplication/ContractFinalized">http://10.80.16.109:7803/Customer/OnlineServiceApplication/ContractFinalized</path>
+  <path key="/Customer/OnlineServiceApplication/Energized">http://10.80.16.109:7803/Customer/OnlineServiceApplication/Energized</path>
+  <path key="/Customer/OnlineServiceApplication/UpdateCase">http://10.80.16.109:7803/Customer/OnlineServiceApplication/UpdateCase</path>
+  <path key="/Customer/OnlineServiceApplication/Retired">http://10.80.16.109:7803/Customer/OnlineServiceApplication/Retired</path>
+  <path key="/Customer/OnlineServiceApplication/ContractTerminated">http://10.80.16.109:7803/Customer/OnlineServiceApplication/ContractTerminated</path>
+  <path key="/Customer/OnlineServiceApplication/ServiceUpdate">http://10.80.16.109:7803/Customer/OnlineServiceApplication/ServiceUpdate</path>
+  <path key="/Customer/OnlineServiceApplication/ApplicationApproved">http://LBG_Customer/Customer/OnlineServiceApplication/ApplicationApproved</path>
+  <path key="/Customer/OnlineServiceApplication/ReinspectionRemarks">http://LBG_Customer/Customer/OnlineServiceApplication/ReinspectionRemarks</path>
+  <path key="/Customer/OnlineServiceApplication/GetServiceDetails">http://LBG_Customer/Customer/OnlineServiceApplication/GetServiceDetails</path>
+  <path key="/Customer/Billing/UpdateBillPrintMode">http://LBG_Customer/Customer/Billing/UpdateBillPrintMode</path>
+  <path key="/Customer/iPay/OnlinePayments">http://LBG_Customer/Customer/iPay/OnlinePayments</path>
 </paths>
 ```
