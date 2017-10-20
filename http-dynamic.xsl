@@ -37,10 +37,6 @@
       </xsl:otherwise>
     </xsl:choose>
 
-    <endpoint>
-      <xsl:value-of select="dp:local-variable('lookup-value')"/>
-    </endpoint>
-
     <xsl:variable name="query-string" select="concat('?', substring-after($uri, '?'))"/>
 
     <xsl:message dp:priority="debug">
