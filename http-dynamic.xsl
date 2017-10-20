@@ -37,6 +37,12 @@
       </xsl:otherwise>
     </xsl:choose>
 
+    <xsl:if test="string-length(dp:local-variable('lookup-value')) = 0">
+      <xsl:message terminate="yes">
+        ERROR: HTTP URI not found in lookup
+      </xsl:message>
+    </xsl:if>
+
     <xsl:variable name="query-string" select="concat('?', substring-after($uri, '?'))"/>
 
     <xsl:message dp:priority="debug">
