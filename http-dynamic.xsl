@@ -22,42 +22,44 @@
 
     <xsl:variable name="path-before" select="substring-before($path, '?')"/>
 
-    <xsl:variable name="http-config" select="document('http-endpoint.xml')/endpoint" />
-
     <xsl:choose>
 
       <!-- if there is a query parameter -->
       <xsl:when test="string-length($path-before) != 0">
         <dp:set-local-variable name="'lookup-value'" value="document('http-lookup.xml')/paths/path[@key=$path-before]"/>
-        <dp:set-variable name="'var://service/routing-url'" value="concat($http-config, concat(dp:local-variable('lookup-value'), $query-string))"/>
+        <dp:set-variable name="'var://service/routing-url'" value="concat(dp:local-variable('lookup-value'), $query-string)"/>
       </xsl:when>
 
       <!-- if there is no query parameter -->
       <xsl:otherwise>
         <dp:set-local-variable name="'lookup-value'" value="document('http-lookup.xml')/paths/path[@key=$path]"/>
-        <dp:set-variable name="'var://service/routing-url'" value="concat($http-config, dp:local-variable('lookup-value'))"/>
+        <dp:set-variable name="'var://service/routing-url'" value="dp:local-variable('lookup-value')"/>
       </xsl:otherwise>
     </xsl:choose>
 
+    <endpoint>
+      <xsl:value-of select="dp:local-variable('lookup-value')"/>
+    </endpoint>
+
     <xsl:variable name="query-string" select="concat('?', substring-after($uri, '?'))"/>
 
-    <xsl:message dp:priority="debug">
-      <xsl:value-of select="dp:variable('var://service/routing-url')"/>
+    <xsl:message dp:priority="error">
+      <xsl:value-of select="concat('routing url: ', dp:variable('var://service/routing-url'))"/>
     </xsl:message>
 
-    <xsl:message dp:priority="debug">
+    <xsl:message dp:priority="error">
       <xsl:value-of select="concat('lookup-value = ', dp:local-variable('lookup-value'))"/>
     </xsl:message>
 
-    <xsl:message dp:priority="debug">
+    <xsl:message dp:priority="error">
       <xsl:value-of select="concat('path = ', $path)"/>
     </xsl:message>
 
-    <xsl:message dp:priority="debug">
+    <xsl:message dp:priority="error">
       <xsl:value-of select="concat('path-before = ', $path-before)"/>
     </xsl:message>
 
-    <xsl:message dp:priority="debug">
+    <xsl:message dp:priority="error">
       <xsl:value-of select="concat('query-string = ', $query-string)"/>
     </xsl:message>
 
