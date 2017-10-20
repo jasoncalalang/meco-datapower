@@ -38,7 +38,6 @@ ___
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml version="1.0" encoding="UTF-8"?>
 
 <paths>
   <path key="/Customer/OnlineServiceApplication/ContractFinalized">http://10.80.16.109:7803/Customer/OnlineServiceApplication/ContractFinalized</path>
