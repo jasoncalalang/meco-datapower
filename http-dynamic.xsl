@@ -43,23 +43,23 @@
 
     <xsl:variable name="query-string" select="concat('?', substring-after($uri, '?'))"/>
 
-    <xsl:message dp:priority="error">
+    <xsl:message dp:priority="debug">
       <xsl:value-of select="concat('routing url: ', dp:variable('var://service/routing-url'))"/>
     </xsl:message>
 
-    <xsl:message dp:priority="error">
+    <xsl:message dp:priority="debug">
       <xsl:value-of select="concat('lookup-value = ', dp:local-variable('lookup-value'))"/>
     </xsl:message>
 
-    <xsl:message dp:priority="error">
+    <xsl:message dp:priority="debug">
       <xsl:value-of select="concat('path = ', $path)"/>
     </xsl:message>
 
-    <xsl:message dp:priority="error">
+    <xsl:message dp:priority="debug">
       <xsl:value-of select="concat('path-before = ', $path-before)"/>
     </xsl:message>
 
-    <xsl:message dp:priority="error">
+    <xsl:message dp:priority="debug">
       <xsl:value-of select="concat('query-string = ', $query-string)"/>
     </xsl:message>
 
